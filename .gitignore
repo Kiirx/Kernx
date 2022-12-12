@@ -16,17 +16,7 @@
 *.dylib
 *.dll
 
-# Fortran module files
-*.mod
-*.smod
+.iso
+.vscode/
+.idea/
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
