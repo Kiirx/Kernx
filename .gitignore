@@ -17,6 +17,7 @@
 *.dll
 
 .iso
+.elf
 .vscode/
 .idea/
 
