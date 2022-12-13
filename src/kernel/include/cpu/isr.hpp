@@ -4,7 +4,41 @@
 #include <stdint.h>
 #include <include/lib/klog.hpp>
 
-char const *error_codes[32];
+char *error_codes[32] = {
+    "division-by-zero",
+    "debug",
+    "non-maskable-interrupt",
+    "breakpoint",
+    "detected-overflow",
+    "out-of-bounds",
+    "invalid-opcode",
+    "no-coprocessor",
+    "double-fault",
+    "coprocessor-segment-overrun",
+    "bad-tss",
+    "segment-not-present",
+    "stack-fault",
+    "general-protection-fault",
+    "page-fault",
+    "unknown-interrupt",
+    "coprocessor-fault",
+    "alignment-check",
+    "machine-check",
+    "simd-floating-point-exception",
+    "virtualization-exception",
+    "control-protection-exception",
+    "reserved",
+    "hypervisor-injection-exception",
+    "vmm-communication-exception",
+    "security-exception",
+    "reserved",
+    "reserved",
+    "reserved",
+    "reserved",
+    "reserved",
+    "reserved",
+};
+
 typedef struct registers 
 {
     uint64_t r15;

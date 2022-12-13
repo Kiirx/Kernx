@@ -1,6 +1,6 @@
 #include <include/cpu/irq.hpp>
 
-void* irq_table[16];
+void* irq_table[16] = { NULL };
 
 void irq_init() 
 {
@@ -26,9 +26,9 @@ void irq_handler(registers_t* r)
         handler h;
         h = reinterpret_cast<handler>(irq_table[r->int_no - 32]);
 
-        if(handler != NULL)
+        if(h)
         {
-            handler(r);
+            h(r);
         } else // Interrupt is unhandled
         {
             klog_panic("Unhandled interrupt occured: ", (uint64_t) error_codes[r->int_no]);
