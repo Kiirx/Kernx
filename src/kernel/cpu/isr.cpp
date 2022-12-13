@@ -1,6 +1,6 @@
 #include <include/cpu/isr.hpp>
 
-static char const *errorCodes[32] = {
+static char const *error_codes[] = {
     "division-by-zero",
     "debug",
     "non-maskable-interrupt",
@@ -39,6 +39,6 @@ extern "C" void isr_handler(uint8_t num, uint64_t err_code);
 
 extern "C" void isr_handler(uint8_t num, uint64_t err_code) 
 {
-    klog_panic("An exception occured", *errorCodes[err_code - 32]);
+    klog_panic("An exception occured", 0);
     asm volatile ("cli; hlt");
 }
