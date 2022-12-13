@@ -22,10 +22,11 @@ void irq_handler(registers_t* r)
 {
     if(r->int_no < 32) 
     {
-        void (*handler)(registers_t* r);
-        handler = irq_table[r->int_no - 32];
+        typedef void (*handler)(struct registers* r);
+        handler h;
+        h = reinterpret_cast<handler>(irq_table[r->int_no - 32]);
 
-        if(handler)
+        if(handler != NULL)
         {
             handler(r);
         } else // Interrupt is unhandled
@@ -36,4 +37,4 @@ void irq_handler(registers_t* r)
         pic_send_EOI(r->int_no - 32);
     }
     
-}
+}                       

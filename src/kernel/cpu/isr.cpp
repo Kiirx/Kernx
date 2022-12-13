@@ -1,6 +1,6 @@
 #include <include/cpu/isr.hpp>
 
-static char const *error_codes[] = {
+char const *error_codes[32] = {
     "division-by-zero",
     "debug",
     "non-maskable-interrupt",

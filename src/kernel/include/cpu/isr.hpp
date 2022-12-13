@@ -4,8 +4,7 @@
 #include <stdint.h>
 #include <include/lib/klog.hpp>
 
-static char const *error_codes[];
-
+char const *error_codes[32];
 typedef struct registers 
 {
     uint64_t r15;
