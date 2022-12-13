@@ -1,6 +1,6 @@
 #include <stdint.h>
 #include <include/cpu/pic.hpp>
-#include <include/lib/printf.hpp>
+#include <include/lib/klog.hpp>
 
 #define IDT_MAX_DESCRIPTORS 256
 
@@ -77,5 +77,5 @@ void idt_init()
     asm volatile ("lidt %0" : : "m"(idtr)); // load the new IDT
     asm volatile ("sti"); // set the interrupt flag
 
-    printf("IDT initialized\n");
+    klog_info("IDT initialized\n");
 }

@@ -28,11 +28,7 @@ extern "C" void _start(void)
     }
 
     printf("Kernx!\n");
-
     idt_init();
-
-    int a = 1 / 0;
-    printf((char*) a);
 
     done();
 }
