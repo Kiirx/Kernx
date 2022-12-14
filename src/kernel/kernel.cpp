@@ -1,8 +1,4 @@
-#include <stdint.h>
-#include <stddef.h>
-#include <limine.h>
-#include <include/lib/printf.hpp>
-#include <include/cpu/idt.hpp>
+#include <include/kernel.hpp>
 
 volatile struct limine_terminal_request __term = 
 {
@@ -27,8 +23,8 @@ extern "C" void _start(void)
         done();
     }
 
-    printf("Kernx!\n");
-    idt_init();
+    init();
+    printf("Kernx initialized\n");
 
     done();
 }

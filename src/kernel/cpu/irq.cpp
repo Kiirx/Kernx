@@ -1,6 +1,6 @@
 #include <include/cpu/irq.hpp>
 
-void* irq_table[16] = { NULL };
+void* irq_table[] = { NULL };
 
 void irq_init() 
 {
